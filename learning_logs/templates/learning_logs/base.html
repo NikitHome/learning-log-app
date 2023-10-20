@@ -32,7 +32,7 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            {% if user.is_authenticated %}
+            {% comment %} {% if user.is_authenticated %}
             <li class="nav-item">
                 <span class="navbar-text">Hello, {{ user.username }}.
                 </span>
@@ -53,7 +53,7 @@
                     Log in
                 </a>
             </li>
-            {% endif %}
+            {% endif %} {% endcomment %}
         </ul>
     </div>
 </nav>
