@@ -2,16 +2,32 @@
 
 {% block content %}
 
-  <p>Topics</p>
+  {% block page_header %}
+    <h1>Topics</h1>
+  {% endblock page_header %}
 
   <ul>
     {% for topic in topics %}
       <li>
-        <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+        <h3>
+          <a href="{% url 'learning_logs:topic' topic.id %}">
+            {{ topic }}
+          </a>
+        </h3>
       </li>
     {% empty %}
-      <li>No topics have been added yet.</li>
+      <li>
+        <h3>
+          No topics have been added yet.
+        </h3>
+      </li>
     {% endfor %}
   </ul>
+
+  <h5>
+    <a href="{% url 'learning_logs:new_topic' %}">
+      Add a new topic
+    </a>
+  </h5>
 
 {% endblock content %}
